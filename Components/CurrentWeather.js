@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, ScrollView } from "react-native";
 import * as api from "../api";
 import SearchBar from "./SearchBar";
+import WeatherForecast from "./WeatherForecast";
 
 const CurrentWeather = () => {
   const [weather, setGetWeather] = useState({ report: [] });
@@ -19,8 +20,6 @@ const CurrentWeather = () => {
     });
   }, [city]);
 
-  console.log(weather);
-
   if (loading)
     return (
       <View>
@@ -29,44 +28,47 @@ const CurrentWeather = () => {
     );
   else
     return (
-      <View style={styles.container}>
-        <SearchBar onSearchCity={handleSearchedCity} />
-        <View style={styles.info}>
-          <Text>
-            {weather.report.name},{weather.report.sys.country}
-          </Text>
+      <ScrollView horizontal={true}>
+        <View style={styles.searchBar}>
+          <SearchBar onSearchCity={handleSearchedCity} />
+          <View style={styles.info}>
+            <Text style={styles.cityName}>
+              {weather.report.name}({weather.report.sys.country})
+            </Text>
+          </View>
+          <View style={styles.info}>
+            <Text style={styles.description}>
+              {weather.report.weather[0].description},{weather.report.main.temp}
+            </Text>
+          </View>
+          <View style={styles.info}>
+            <Text>
+              Sunrise:{weather.report.sys.sunrise}, SunSet:
+              {weather.report.sys.sunset}
+            </Text>
+          </View>
+          <View style={styles.info}>
+            <Text>Wind Speed-{weather.report.wind.speed}</Text>
+          </View>
+          <WeatherForecast city={city} />
         </View>
-        <View style={styles.info}>
-          <Text>
-            {weather.report.weather[0].description},{weather.report.main.temp}
-          </Text>
-        </View>
-        <View style={styles.info}>
-          <Text>
-            Sunrise:{weather.report.sys.sunrise}, SunSet:
-            {weather.report.sys.sunset}
-          </Text>
-        </View>
-        <View style={styles.info}>
-          <Text>Wind Speed-{weather.report.wind.speed}</Text>
-        </View>
-      </View>
+      </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 1,
-    margin: 1,
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+  searchBar: {},
+  info: {
+    padding: 10,
+    margin: 10
+  },
+  cityName: {
+    fontSize: 40
+  },
+  description: {
+    fontSize: 20,
+    alignItems: "stretch"
   }
-  // info: {
-  //   padding: 10,
-  //   margin: 10
-  // }
 });
 
 export default CurrentWeather;
