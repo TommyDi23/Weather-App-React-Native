@@ -1,18 +1,31 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 const {
   dateFormatter,
   kelvinToCelsius
 } = require("../utility-functions/utilityFunctions");
 
+const image = {
+  uri: "http://openweathermap.org/img/wn/10d%402x.png"
+};
+
 const WeatherCard = props => {
   const { weather } = props;
+  console.log(weather.weather[0].icon);
   return (
     <View style={styles.info}>
       <View>
         <Text style={styles.cityName}>
           {weather.name}({weather.sys.country})
         </Text>
+      </View>
+      <View style={styles.icon}>
+        <Image
+          style={{ width: 90, height: 90 }}
+          source={{
+            uri: `http://openweathermap.org/img/wn/${weather.weather[0].icon}%402x.png`
+          }}
+        />
       </View>
       <View>
         <Text style={styles.description}>{weather.weather[0].description}</Text>
@@ -50,6 +63,9 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 20,
     alignItems: "center"
+  },
+  icon: {
+    fontSize: 50
   }
 });
 

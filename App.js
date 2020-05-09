@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Button, ImageBackground } from "react-native";
+import { View, StyleSheet, ImageBackground, KeyboardAvoidingView, key } from "react-native";
 import Header from "./Components/Header";
 import CurrentWeather from "./Components/CurrentWeather";
 
@@ -12,12 +12,14 @@ export default function App() {
   };
 
   return (
+    <KeyboardAvoidingView style={styles.keyboard}>
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <Header />
         <CurrentWeather />
       </ImageBackground>
     </View>
+      </KeyboardAvoidingView>
   );
 }
 
@@ -34,5 +36,8 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center"
+  },
+  keyboard:{
+    flex: 1
   }
 });
