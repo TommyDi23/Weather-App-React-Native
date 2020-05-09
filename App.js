@@ -4,21 +4,11 @@ import Header from "./Components/Header";
 import CurrentWeather from "./Components/CurrentWeather";
 
 export default function App() {
-  // console.log(weather)
-
-  //   console.log(
-  //     weather.sys.country,
-  //     weather.name,
-  //     weather.main.temp,
-  //     weather.wind.speed,
-  //     weather.weather[0].description,
-  //     weather.sys.sunrise,
-  //     weather.sys.sunset
-  //   );
+  
 
   const image = {
     uri:
-      "https://img.resized.co/newstalk/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL21lZGlhLnJhZGlvY21zLm5ldFxcXC91cGxvYWRzXFxcLzIwMTlcXFwvMDVcXFwvMjkxMDEyMDhcXFwvc3Vuc2hpbmUyLWUxNTU2OTY3ODk4Nzk2LmpwZ1wiLFwid2lkdGhcIjo5NzAsXCJoZWlnaHRcIjo0ODUsXCJkZWZhdWx0XCI6XCJodHRwczpcXFwvXFxcL3d3dy5uZXdzdGFsay5jb21cXFwvaW1hZ2VzXFxcL2RlZmF1bHRfbm9faW1hZ2UucG5nXCJ9IiwiaGFzaCI6ImIyMzg1MDgzM2NjOGZkNDllZWFkN2RjYTc1YTRmNzVhODA2MWNhYmYifQ==/thursday-s-weather-good-sunny-spells-with-some-light-rain-later.jpg"
+      "https://webcomicms.net/sites/default/files/clipart/147582/cartoon-cloud-png-147582-6921620.png"
   };
 
   return (

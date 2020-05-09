@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, Button, StyleSheet } from "react-native";
+import Modal from "react-native-modal";
 
 const SearchBar = props => {
   const [searchedCity, setSearchedCity] = useState("");
@@ -13,16 +14,32 @@ const SearchBar = props => {
     setSearchedCity("");
   };
 
+
   return (
-    <View>
-      <TextInput
-        placeholder="search city"
-        onChangeText={cityInputHandler}
-        value={searchedCity}
-      />
-      <Button title="search" onPress={searchCityHandler} />
-    </View>
+    <Modal
+      isVisible={props.showSearch}
+      animationIn="fadeInDownBig"
+      backdropOpacity={1}
+      deviceHeight={100}
+    >
+      <View style={styles.modal}>
+        <View>
+          <TextInput
+            style={{ color: "white" }}
+            placeholder="search city"
+            onChangeText={cityInputHandler}
+            value={searchedCity}
+          />
+          <Button title="search" onPress={searchCityHandler} />
+        </View>
+      </View>
+    </Modal>
   );
 };
+const styles = StyleSheet.create({
+  modal: {
+    flex: 2
+  }
+});
 
 export default SearchBar;

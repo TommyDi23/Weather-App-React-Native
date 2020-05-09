@@ -12,7 +12,7 @@ export const fetchWeather = city => {
 
 export const fetchForecast = city => {
   return axios
-    .get(`${baseURL}/data/2.5/forecast?q=${city}&cnt=5&appid=${apiKey}`)
+    .get(`${baseURL}/data/2.5/forecast?q=${city}&cnt=20&appid=${apiKey}`)
     .then(({ data }) => {
       return data;
     });
