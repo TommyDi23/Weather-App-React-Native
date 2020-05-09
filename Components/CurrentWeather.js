@@ -8,7 +8,7 @@ import WeatherCard from "./WeatherCard";
 const CurrentWeather = () => {
   const [weather, setGetWeather] = useState({ report: [] });
   const [city, setCity] = useState("manchester");
-  const [loading, isLoading] = useState(true);
+  const [loading, setIsLoading] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
 
   const handleSearchedCity = searchedCity => {
@@ -19,7 +19,7 @@ const CurrentWeather = () => {
   useEffect(() => {
     api.fetchWeather(city).then(data => {
       setGetWeather({ report: data });
-      isLoading(false);
+      setIsLoading(false);
       setShowSearch(false);
     });
   }, [city]);
@@ -33,7 +33,9 @@ const CurrentWeather = () => {
   else
     return (
       <View style={styles.screen}>
-        <Button title="search city" onPress={() => setShowSearch(true)} />
+        <View style={styles.searchButton}>
+          <Button title="search city" color='black' onPress={() => setShowSearch(true)} />
+        </View>
         <View style={styles.searchBar}>
           <SearchBar
             onSearchCity={handleSearchedCity}
@@ -51,11 +53,17 @@ const CurrentWeather = () => {
 };
 
 const styles = StyleSheet.create({
+  searchButton: {
+    marginTop: 5,
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center"
+  },
   searchBar: {
-    flex: 1.5
+    flex: 0.1
   },
   weatherCard: {
-    flex: 4
+    flex: 6.3
   },
   weatherForecast: {
     flex: 2

@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>Mobo weather</Text>
+      <Text style={styles.headerTitle}>Mobo Weather</Text>
     </View>
   );
 };
@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: "black",
-    fontSize: 20
+    fontSize: 30,
+    fontWeight: "bold",
+    fontFamily: "monospace"
   }
 });
 

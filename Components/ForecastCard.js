@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  ImageBackground,
+  ImageBackground
 } from "react-native";
 const { kelvinToCelsius } = require("../utility-functions/utilityFunctions");
 
@@ -13,7 +13,7 @@ const ForecastCard = ({ forecast }) => {
     <View>
       <ScrollView scrollEventThrottle={16}>
         <View style={styles.forecast}>
-          <Text>3 hour forecast</Text>
+          <Text style={styles.subHeader}>3 hour forecast</Text>
           <View style={styles.forecastData}>
             <ScrollView
               horizontal={true}
@@ -22,7 +22,7 @@ const ForecastCard = ({ forecast }) => {
               {forecast.map((hours, index) => (
                 <View style={styles.data} key={index}>
                   <ImageBackground
-                    style={{width:180, height:80}}
+                    style={{ width: 180, height: 80 }}
                     source={{
                       uri: `http://openweathermap.org/img/wn/${hours.weather[0].icon}%402x.png`
                     }}
@@ -45,19 +45,24 @@ const ForecastCard = ({ forecast }) => {
 };
 
 const styles = StyleSheet.create({
+  subHeader: {
+    color: "white",
+    fontSize: 17,
+    alignItems: "center"
+  },
   forecast: {
     flex: 1,
-    backgroundColor: "green",
+    backgroundColor: "black",
     paddingTop: 10
   },
   forecastCard: {
-    height: 130,
+    height: 100,
     marginTop: 10,
     padding: 5
   },
   forecastData: {
-    height: 100,
-    marginTop: 20
+    height: 90,
+    marginTop: 9
   },
   data: {
     width: 200,
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   info: {
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   }
 });
 
