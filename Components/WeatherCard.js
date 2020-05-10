@@ -5,13 +5,8 @@ const {
   kelvinToCelsius
 } = require("../utility-functions/utilityFunctions");
 
-const image = {
-  uri: "http://openweathermap.org/img/wn/10d%402x.png"
-};
-
 const WeatherCard = props => {
   const { weather } = props;
-  console.log(weather.weather[0].icon);
   return (
     <View style={styles.info}>
       <View>
@@ -31,19 +26,21 @@ const WeatherCard = props => {
         <Text style={styles.description}>{weather.weather[0].description}</Text>
       </View>
       <View>
-        <Text>{kelvinToCelsius(weather.main.temp)} C</Text>
+        <Text style={styles.temp}>{kelvinToCelsius(weather.main.temp)} C</Text>
       </View>
       <View>
-        <Text> Sunrise:{dateFormatter(weather.sys.sunrise)}, </Text>
-      </View>
-      <View>
-        <Text>
-          SunSet:
-          {dateFormatter(weather.sys.sunset)}
+        <Text style={styles.sunrise}>
+          {" "}
+          Sunrise: {dateFormatter(weather.sys.sunrise)}{" "}
         </Text>
       </View>
       <View>
-        <Text>Wind Speed => {weather.wind.speed}</Text>
+        <Text style={styles.sunset}>
+          SunSet: {dateFormatter(weather.sys.sunset)}
+        </Text>
+      </View>
+      <View>
+        <Text style={styles.wind}>Wind Speed => {weather.wind.speed}</Text>
       </View>
     </View>
   );
@@ -58,14 +55,54 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   cityName: {
-    fontSize: 40
+    fontSize: 42,
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 1
   },
   description: {
+    marginTop: -40,
     fontSize: 20,
-    alignItems: "center"
+    fontWeight: "bold",
+    alignItems: "center",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 1
   },
   icon: {
-    fontSize: 50
+    marginTop: -40
+  },
+  temp: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2
+  },
+  sunrise: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#FFD700",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10
+  },
+  sunset: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#FF8C00",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10
+  },
+  wind: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#7FFFD4",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10
   }
 });
 

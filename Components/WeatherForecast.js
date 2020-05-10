@@ -28,14 +28,6 @@ const WeatherForecast = ({ city }) => {
     );
 };
 
-// const styles = StyleSheet.create({
-//   listedData: {
-//     paddingTop: 20,
-//     flex: 1,
-//     backgroundColor: "yellow",
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// });
+
 
 export default WeatherForecast;

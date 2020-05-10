@@ -25,7 +25,7 @@ const SearchBar = props => {
       <View style={styles.modal}>
         <View>
           <TextInput
-            style={{ color: "white", fontSize:30 }}
+            style={{ color: "white", fontSize:25 }}
             placeholder="search city"
             onChangeText={cityInputHandler}
             value={searchedCity}

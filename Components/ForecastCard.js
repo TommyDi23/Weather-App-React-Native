@@ -28,10 +28,16 @@ const ForecastCard = ({ forecast }) => {
                     }}
                   >
                     <View style={styles.info}>
-                      <Text>{hours.dt_txt.slice(10, -3)}</Text>
-                      <Text>wind:{hours.wind.speed}</Text>
-                      <Text>{hours.weather[0].main}</Text>
-                      <Text>{kelvinToCelsius(hours.main.temp)}c</Text>
+                      <Text style={styles.time}>
+                        {hours.dt_txt.slice(10, -3)}
+                      </Text>
+                      <Text style={styles.wind}>wind: {hours.wind.speed}</Text>
+                      <Text style={styles.description}>
+                        {hours.weather[0].main}
+                      </Text>
+                      <Text style={styles.temp}>
+                        {kelvinToCelsius(hours.main.temp)}c
+                      </Text>
                     </View>
                   </ImageBackground>
                 </View>
@@ -46,6 +52,8 @@ const ForecastCard = ({ forecast }) => {
 
 const styles = StyleSheet.create({
   subHeader: {
+    fontFamily: "monospace",
+    marginLeft: 20,
     color: "white",
     fontSize: 17,
     alignItems: "center"
@@ -75,7 +83,35 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   info: {
-    alignItems: "flex-start",
+    alignItems: "flex-start"
+  },
+  time: {
+    fontWeight: "bold",
+    fontSize: 20,
+    textShadowColor: "rgba(0, 0, 0, 0.9)",
+    textShadowOffset: { width: -0.5, height: 0.5 },
+    textShadowRadius: 1
+  },
+  wind: {
+    fontWeight: "bold",
+    color: "#7FFFD4",
+    textShadowColor: "rgba(0, 0, 0, 0.9)",
+    textShadowOffset: { width: -0.5, height: 0.5 },
+    textShadowRadius: 10
+  },
+  description: {
+    fontWeight: "bold",
+    color: "blue",
+    textShadowColor: "rgba(0, 0, 0, 0.9)",
+    textShadowOffset: { width: -0.5, height: 0.5 },
+    textShadowRadius: 1
+  },
+  temp: {
+    fontWeight: "bold",
+    color: "red",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 1
   }
 });
 
