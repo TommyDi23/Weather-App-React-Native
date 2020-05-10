@@ -80,7 +80,9 @@ const styles = StyleSheet.create({
     flexDirection: "column-reverse",
     backgroundColor: "yellow",
     justifyContent: "space-between",
-    borderRadius: 10
+    borderRadius: 29,
+    borderColor: "#FFFAFA",
+    borderWidth: 0.5
   },
   info: {
     alignItems: "flex-start"

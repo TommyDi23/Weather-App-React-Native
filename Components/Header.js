@@ -1,12 +1,21 @@
 import React from "react";
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 
-const Header = () => {
+const Header = ({ navigation }) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitleFirst}> Mobo </Text>
       <Text style={styles.headerTitleSecond}>Weather</Text>
+      {/* <Button title="About" onPress={() => navigation.navigate("About")} /> */}
+      <View style={styles.about}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("About")}
+        >
+          <Text>About</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -19,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     borderColor: "black",
     alignItems: "flex-start",
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
     borderWidth: 2,
     padding: 30,
     marginTop: 0,
@@ -34,7 +43,7 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
     marginLeft: -20,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderWidth: 3
   },
   headerTitleSecond: {
@@ -45,8 +54,17 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
-    backgroundColor: 'black',
+    backgroundColor: "black",
     borderWidth: 3
+  },
+  button: {
+    alignItems: "flex-end",
+    backgroundColor: "#DDDDDD",
+    padding: 10
+  },
+  about: {
+    alignItems:'flex-end',
+    marginLeft: 80
   }
 });
 
