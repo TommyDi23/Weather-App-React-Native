@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: "monospace",
-    color: "white"
+    fontWeight: 'bold',
+    color: "white",
+    padding: 2
   },
   about: {
     marginLeft: 80

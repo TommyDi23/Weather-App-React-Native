@@ -12,19 +12,19 @@ const CurrentWeather = ({ navigation }) => {
   const [loading, setIsLoading] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
 
-  
-
   const handleSearchedCity = searchedCity => {
     setCity(searchedCity);
     setShowSearch(false);
   };
 
   useEffect(() => {
-    api.fetchWeather(city).then(data => {
-      setGetWeather({ report: data });
-      setIsLoading(false);
-      setShowSearch(false);
-    });
+    api
+      .fetchWeather(city)
+      .then(data => {
+        setGetWeather({ report: data });
+        setIsLoading(false);
+        setShowSearch(false);
+      })
   }, [city]);
 
   if (loading)

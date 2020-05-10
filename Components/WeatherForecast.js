@@ -8,11 +8,13 @@ const WeatherForecast = ({ city }) => {
   const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.fetchForecast(city).then(data => {
-      setForecast({ report: data.list });
-      setIsLoading(false);
-    });
-  }, []);
+    api
+      .fetchForecast(city)
+      .then(data => {
+        setForecast({ report: data.list });
+        setIsLoading(false);
+      })
+  }, [])
 
   if (loading)
     return (
