@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   cityName: {
     fontSize: 42,
     fontWeight: "bold",
+    marginTop: -20,
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 1
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   wind: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#7FFFD4",
+    color: "black",
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10

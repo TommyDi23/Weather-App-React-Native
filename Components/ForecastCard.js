@@ -96,10 +96,10 @@ const styles = StyleSheet.create({
   },
   wind: {
     fontWeight: "bold",
-    color: "#7FFFD4",
+    color: "black",
     textShadowColor: "rgba(0, 0, 0, 0.9)",
     textShadowOffset: { width: -0.5, height: 0.5 },
-    textShadowRadius: 10
+    textShadowRadius: 1
   },
   description: {
     fontWeight: "bold",

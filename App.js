@@ -7,14 +7,18 @@ import About from "./Components/About";
 
 const Stack = createStackNavigator();
 
+
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Current Weather">
-        <Stack.Screen name="Current Weather" component={CurrentWeather} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={CurrentWeather}
+        />
         <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-

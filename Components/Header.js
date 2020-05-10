@@ -13,7 +13,7 @@ const Header = ({ navigation }) => {
           style={styles.button}
           onPress={() => navigation.navigate("About")}
         >
-          <Text>About</Text>
+          <Text style={styles.buttonText}>About</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -29,9 +29,8 @@ const styles = StyleSheet.create({
     borderColor: "black",
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    borderWidth: 2,
+    borderWidth: 0,
     padding: 30,
-    marginTop: 0,
     flexDirection: "row"
   },
   headerTitleFirst: {
@@ -55,15 +54,21 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
     backgroundColor: "black",
-    borderWidth: 3
+    borderWidth: 3,
   },
   button: {
     alignItems: "flex-end",
-    backgroundColor: "#DDDDDD",
-    padding: 10
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    padding: 5
+  },
+  buttonText: {
+    fontFamily: "monospace",
+    color: "white"
   },
   about: {
-    alignItems:'flex-end',
     marginLeft: 80
   }
 });

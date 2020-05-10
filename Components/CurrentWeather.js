@@ -12,6 +12,8 @@ const CurrentWeather = ({ navigation }) => {
   const [loading, setIsLoading] = useState(true);
   const [showSearch, setShowSearch] = useState(false);
 
+  
+
   const handleSearchedCity = searchedCity => {
     setCity(searchedCity);
     setShowSearch(false);
@@ -35,30 +37,30 @@ const CurrentWeather = ({ navigation }) => {
     return (
       <View style={styles.screen}>
         <ImageBackground
-        source={require("../assets/cartoon-cloud-png.png")}
-        style={styles.image}
-        resizeMode="cover"
-      >
-        <Header navigation={navigation} />
-        <View style={styles.searchButton}>
-          <Button
-            title="search city"
-            color="black"
-            onPress={() => setShowSearch(true)}
-          />
-        </View>
-        <View style={styles.searchBar}>
-          <SearchBar
-            onSearchCity={handleSearchedCity}
-            showSearch={showSearch}
-          />
-        </View>
-        <View style={styles.weatherCard}>
-          <WeatherCard weather={weather.report} />
-        </View>
-        <View style={styles.weatherForecast}>
-          <WeatherForecast city={city} />
-        </View>
+          source={require("../assets/cartoon-cloud-png.png")}
+          style={styles.image}
+          resizeMode="cover"
+        >
+          <Header navigation={navigation} />
+          <View style={styles.searchButton}>
+            <Button
+              title="search city"
+              color="black"
+              onPress={() => setShowSearch(true)}
+            />
+          </View>
+          <View style={styles.searchBar}>
+            <SearchBar
+              onSearchCity={handleSearchedCity}
+              showSearch={showSearch}
+            />
+          </View>
+          <View style={styles.weatherCard}>
+            <WeatherCard weather={weather.report} />
+          </View>
+          <View style={styles.weatherForecast}>
+            <WeatherForecast city={city} />
+          </View>
         </ImageBackground>
       </View>
     );
@@ -85,11 +87,11 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0.5
   },
-   image: {
+  image: {
     width: "100%",
     height: "100%",
-    flex: 1,
-  },
+    flex: 1
+  }
 });
 
 export default CurrentWeather;
