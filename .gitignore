@@ -10,7 +10,6 @@ npm-debug.*
 web-build/
 web-report/
 Apikey.js
-AppOrig.js
 
 # macOS
 .DS_Store

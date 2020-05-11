@@ -2,11 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 const {
   dateFormatter,
-  kelvinToCelsius,
+  kelvinToCelsius
 } = require("../utility-functions/utilityFunctions");
 
 const WeatherCard = props => {
   const { weather } = props;
+
   return (
     <View style={styles.info}>
       <View>
@@ -23,19 +24,18 @@ const WeatherCard = props => {
         />
       </View>
       <View>
-        <Text style={styles.description}>
-          {weather.weather[0].description}
-          {console.log(weather.weather[0].description)}
-        </Text>
+        <Text style={styles.description}>{weather.weather[0].description}</Text>
       </View>
       <View>
-        <Text style={styles.temp}>{kelvinToCelsius(weather.main.temp)} C</Text>
+        <Text style={styles.temp}>
+          {kelvinToCelsius(weather.main.temp)}
+          {"\u00b0"}C
+        </Text>
       </View>
       <View>
         <Text style={styles.sunrise}>
           {" "}
           Sunrise: {dateFormatter(weather.sys.sunrise)}{" "}
-          {console.log(dateFormatter(weather.sys.sunrise).toString())}
         </Text>
       </View>
       <View>

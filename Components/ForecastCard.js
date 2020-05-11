@@ -9,6 +9,7 @@ import {
 const { kelvinToCelsius } = require("../utility-functions/utilityFunctions");
 
 const ForecastCard = ({ forecast }) => {
+  
   return (
     <View>
       <ScrollView scrollEventThrottle={16}>
@@ -36,7 +37,7 @@ const ForecastCard = ({ forecast }) => {
                         {hours.weather[0].main}
                       </Text>
                       <Text style={styles.temp}>
-                        {kelvinToCelsius(hours.main.temp)}c
+                        {kelvinToCelsius(hours.main.temp)}{'\u00b0'}c
                       </Text>
                     </View>
                   </ImageBackground>

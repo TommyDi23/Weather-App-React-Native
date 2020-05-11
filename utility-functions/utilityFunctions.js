@@ -12,10 +12,4 @@ const kelvinToCelsius = kelvinTemp => {
   return celsius.toFixed().toString();
 };
 
-// const dayOrNight = currentTime => {
-//   const hours = parseInt(currentTime.toUTCString().slice(-12, -7));
-//   if (hours >= 18 && hours <= 4) return true;
-// };
-
-
 module.exports = { dateFormatter, kelvinToCelsius };

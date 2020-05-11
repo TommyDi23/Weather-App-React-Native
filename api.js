@@ -18,4 +18,5 @@ export const fetchForecast = city => {
     });
 };
 
-//http://api.openweathermap.org/data/2.5/forecast?q=london&cnt=5&appid=0be896d1cc97a82638c873fc30f4796d
+
+

@@ -1,13 +1,12 @@
 import React from "react";
 
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Header = ({ navigation }) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitleFirst}> Mobo </Text>
       <Text style={styles.headerTitleSecond}>Weather</Text>
-      {/* <Button title="About" onPress={() => navigation.navigate("About")} /> */}
       <View style={styles.about}>
         <TouchableOpacity
           style={styles.button}

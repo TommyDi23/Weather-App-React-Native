@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, ImageBackground } from "react-native";
+import { StyleSheet, View, Button, ImageBackground } from "react-native";
 import * as api from "../api";
 import SearchBar from "./SearchBar";
 import WeatherForecast from "./WeatherForecast";
 import WeatherCard from "./WeatherCard";
 import Header from "./Header";
+import Loading from "./Loading";
 
 const CurrentWeather = ({ navigation }) => {
   const [weather, setGetWeather] = useState({ report: [] });
@@ -25,14 +26,10 @@ const CurrentWeather = ({ navigation }) => {
         setIsLoading(false);
         setShowSearch(false);
       })
+      .catch();
   }, [city]);
 
-  if (loading)
-    return (
-      <View>
-        <Text>...loading</Text>
-      </View>
-    );
+  if (loading) return <Loading />;
   else
     return (
       <View style={styles.screen}>
