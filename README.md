@@ -39,7 +39,8 @@ you can also view a 3 hourly forecast which you can scroll left at the bottom of
 
 4. To run React native open your terminal and run the script
 
-`npm start, Press a to run on your simulator, or you can scan QR code in the expo app on your chosen phone` 
+`npm start`
+`Press a to run on your simulator, or you can scan QR code in the expo app on your chosen phone` 
 
 5. To exit app
 
