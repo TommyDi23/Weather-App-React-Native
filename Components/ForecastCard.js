@@ -9,7 +9,6 @@ import {
 const { kelvinToCelsius } = require("../utility-functions/utilityFunctions");
 
 const ForecastCard = ({ forecast }) => {
-  
   return (
     <View>
       <ScrollView scrollEventThrottle={16}>
@@ -37,7 +36,8 @@ const ForecastCard = ({ forecast }) => {
                         {hours.weather[0].main}
                       </Text>
                       <Text style={styles.temp}>
-                        {kelvinToCelsius(hours.main.temp)}{'\u00b0'}c
+                        {kelvinToCelsius(hours.main.temp)}
+                        {"\u00b0"}c
                       </Text>
                     </View>
                   </ImageBackground>
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
   forecast: {
     flex: 1,
     backgroundColor: "black",
-    paddingTop: 10
+    paddingTop: 0,
+    marginBottom: 0
   },
   forecastCard: {
     height: 100,
@@ -70,8 +71,7 @@ const styles = StyleSheet.create({
     padding: 5
   },
   forecastData: {
-    height: 90,
-    marginTop: 9
+    height: 90
   },
   data: {
     width: 200,
